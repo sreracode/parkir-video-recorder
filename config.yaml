@@ -1,13 +1,11 @@
 server:
   port: 5050
   host: 127.0.0.1
-
 camera:
-  rtsp_url: rtsp://admin:password@192.168.1.81:554/Streaming/Channels/102
+  rtsp_url: rtsp://admin:akatsuki86@192.168.1.81:554/Streaming/Channels/102
   fps: 25
   width: 1280
   height: 720
   buffer_seconds: 10
-
 paths:
-  output_dir: E:/Project/Project Parkir/SMARTPARK/video-capture/videos
+  output_dir: Z:\Video_Keluar
