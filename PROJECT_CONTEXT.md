@@ -56,7 +56,7 @@ Source utama sudah ditemukan di `src/recording_service.py`; catatan lama tentang
 
 ## Relasi
 - **IP Camera:** Capture video stream dari kamera parkir
-- **parkir-auto-cleanup:** File video yang direkam dibersihkan service ini
+- **parkir-auto-cleanup:** File video dan snapshot yang dibuat service ini dibersihkan oleh auto-cleanup
 
 ## Risiko Jika Mati/Diubah
 - Tidak ada rekaman video
@@ -67,8 +67,8 @@ Source utama sudah ditemukan di `src/recording_service.py`; catatan lama tentang
 - Snapshot manual: `curl "http://127.0.0.1:5050/snapshot?notrans=<notrans>"`
 - Start/stop manual: `/start?notrans=<notrans>` lalu `/stop?notrans=<notrans>&delay=5`.
 - Cek folder output `Z:\Video_Keluar` dan pastikan service punya akses tulis.
-- Perlu dikonfirmasi apakah `foto_dir` di-set pada config produksi; config yang discan tidak memuatnya.
+- Perlu dikonfirmasi apakah `foto_dir` di-set pada config produksi; config yang discan tidak memuatnya. Jika tidak diset, snapshot masuk ke `Z:\Video_Keluar`.
 
 ## Status Dokumentasi
 
-Catatan 2026-06-10: source utama sudah ditemukan. Yang masih perlu dikonfirmasi hanya deployment service aktif, apakah `foto_dir` diset di config produksi, dan apakah cleanup sudah mengarah ke `Z:\Video_Keluar`.
+Catatan 2026-06-11: source utama sudah ditemukan. Cleanup default sekarang diarahkan ke `Z:\Video_Keluar` untuk video `.avi/.mp4`, `Z:\Foto_Keluar` untuk foto keluar, dan fallback `.jpg/.jpeg/.png` di `Z:\Video_Keluar` jika `foto_dir` belum diset. Yang masih perlu dikonfirmasi hanya deployment service aktif dan apakah `foto_dir` diset di config produksi.
